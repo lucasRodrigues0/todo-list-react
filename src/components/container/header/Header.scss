@@ -1,0 +1,20 @@
+.header {
+    align-items: center;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-container {
+    border: 1px dashed red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 60%;
+}
+
+.input-container button {
+    margin-left: 5px;
+}

@@ -1,0 +1,14 @@
+.task {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    margin: 5px 0;
+}
+
+.icon {
+    background-color: black;
+    width: 20px;
+    height: 20px;
+}
