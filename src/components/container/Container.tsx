@@ -2,29 +2,35 @@ import { Task } from "./task";
 import './Container.scss';
 import { Header } from "./header";
 import { useState } from "react";
-import { TASKLIST } from "../../utils/constants";
+import { TaskModel } from "../../utils/constants";
 
 export const Container = () => {
 
     const [inputValue, setInputValue] = useState("");
+    const [taskList, setTaskList] = useState<TaskModel[]>([]);
 
     const updateValue = (e: React.ChangeEvent<HTMLInputElement>): void =>{
         setInputValue(e.target.value);
     }
 
-    const addTask = () => {
+    const addTask = (): void => {
         if(inputValue === "") return;
-        TASKLIST.push({text: inputValue, checked: false});
+        const newTask: TaskModel = {text: inputValue, checked: false};
+        setTaskList([...taskList, newTask]);
         setInputValue("");
+    }
+
+    const deleteTask = (taskToDelete: TaskModel): void => {
+        setTaskList(prevTaskList => prevTaskList.filter(task => task !== taskToDelete));
     }
 
     return (
         <div className="container">
             <Header updateValue={updateValue} addTask={addTask} inputValue={inputValue}/>
             <div className="task-container">
-                {TASKLIST.map((task) => {
+                {taskList.map((task) => {
                     return (
-                        <Task key={`task-${task.text}`} text={task.text} checked={task.checked}/>
+                        <Task key={`task-${task.text}`} text={task.text} checked={task.checked} deleteTask={() => deleteTask(task)}/>
                     )
                 })}
             </div>

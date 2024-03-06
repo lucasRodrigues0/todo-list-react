@@ -7,11 +7,20 @@ type Props = {
 }
 
 export const Header = ({updateValue, addTask, inputValue}: Props) => {
+
+    const handleKeyPress = (e: React.KeyboardEvent): void => {
+        if(e.key === "Enter") {
+            addTask();
+        } else {
+            return;
+        }
+    }
+
     return (
         <div className="header">
             <h1>To Do List</h1>
             <div className="input-container">
-                <input type="text" placeholder="Digite a tarefa" onChange={updateValue} value={inputValue} />
+                <input type="text" placeholder="Digite a tarefa" onChange={updateValue} value={inputValue} onKeyDown={handleKeyPress}/>
                 <button onClick={addTask}>Adicionar</button>
             </div>
         </div>

@@ -1,6 +1,4 @@
-interface Task {
+export interface TaskModel {
     text: string,
     checked: boolean
 }
-
-export const TASKLIST: Task[] = [];
