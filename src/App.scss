@@ -1,5 +1,7 @@
+@use 'index';
+
 .App {
-  border: 3px dashed green;
+  background-color: index.$platinum;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;

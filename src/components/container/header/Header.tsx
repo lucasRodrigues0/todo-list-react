@@ -18,7 +18,7 @@ export const Header = ({updateValue, addTask, inputValue}: Props) => {
 
     return (
         <div className="header">
-            <h1>To Do List</h1>
+            <h1 className="title">To Do List</h1>
             <div className="input-container">
                 <input type="text" placeholder="Digite a tarefa" onChange={updateValue} value={inputValue} onKeyDown={handleKeyPress}/>
                 <button onClick={addTask}>Adicionar</button>
