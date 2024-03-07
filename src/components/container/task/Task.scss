@@ -34,9 +34,13 @@
     margin-left: 5px;
 }
 
-.checked {
+.checked-text {
     color: index.$silver;
     text-decoration: line-through;
+}
+
+.checked-icon {
+    fill: red;
 }
 
 @media screen and (max-width: 783px) {
