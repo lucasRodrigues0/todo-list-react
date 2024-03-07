@@ -1,0 +1,63 @@
+@use '../../../../src/index';
+
+.header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.title {
+    color: index.$tomato;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 60%;
+}
+
+.input-container input {
+    color: index.$blackOlive;
+    background-color: index.$silver;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.input-container button {
+    background-color: index.$silver;
+    color: index.$blackOlive;
+    font-size: 15px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    transition: 0.2s all ease-in;
+}
+
+.input-container button:hover {
+    background-color: index.$blackOlive;
+    color: #fff;
+    transition: 0.2s all ease-in;
+}
+
+@media screen and (max-width: 783px) {
+    .input-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .input-container input {
+        border-radius: 50px;
+    }
+
+    .input-container button {
+        border-radius: 50px;
+        margin: 5px 0;
+        font-size: 30px;
+        background-color: index.$blackOlive;
+        color: #fff;
+    }
+}

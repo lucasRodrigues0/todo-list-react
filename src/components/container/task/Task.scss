@@ -1,0 +1,55 @@
+@use '../../../../src/index';
+
+.task {
+    align-items: center;
+    background-color: index.$battleshipGray;
+    border-radius: 50px;
+    color: index.$blackOlive;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px 0;
+    min-width: 100%;
+}
+
+.task-content-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.delete-icon {
+    display: none;
+    height: 20px;
+    width: 20px;
+}
+
+.delete-icon-active {
+    display: block;
+}
+
+.svg-icon {
+    height: 100%;
+    width: 100%;
+}
+
+.task-text {
+    margin-left: 5px;
+}
+
+.checked-text {
+    color: index.$silver;
+    text-decoration: line-through;
+}
+
+.checked-icon {
+    fill: red;
+}
+
+@media screen and (max-width: 783px) {
+    .task {
+        font-size: 15px;
+    }
+}
