@@ -21,8 +21,13 @@
 }
 
 .delete-icon {
+    display: none;
     height: 20px;
     width: 20px;
+}
+
+.delete-icon-active {
+    display: block;
 }
 
 .svg-icon {

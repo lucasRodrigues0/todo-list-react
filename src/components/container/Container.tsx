@@ -14,9 +14,26 @@ export const Container = () => {
     }
 
     const addTask = (): void => {
+
+        let aux: boolean = true;
+
         if(inputValue === "") return;
+
         const newTask: TaskModel = {text: inputValue, checked: false};
-        setTaskList([...taskList, newTask]);
+
+        for (let task of taskList) {
+            if(task.text === newTask.text) {
+                aux = !aux;
+            }
+        }
+
+        if(aux) {
+            setTaskList([...taskList, newTask]);
+        } else {
+            alert('tarefa já registrada!');
+            return;
+        }
+
         setInputValue("");
     }
 
